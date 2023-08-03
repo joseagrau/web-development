@@ -3,57 +3,589 @@
   <head>
     <meta charset="utf-8">
     <title>Jose Antonio's WebSite</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="icon" href="images/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Merriweather:wght@300&family=Montserrat&family=Sacramento&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+    <!-- Fonts Awesome  -->
+    <script src="https://kit.fontawesome.com/3a48cfb50c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
   </head>
   <body>
-    <div class="top-container">
-      <img class="top-cloud" src="images/crab.png" alt="clouds">
-      <!-- style="
-      background-color: blue;
-      height: 100px;"> -->
-      <h1 id="top">I'm Jose Antonio.</h1>
-      <!--<p>a <span class="pro">pro</span>grammer.</p>-->
-      <h2>a <span class="pro">pro</span>grammer.</h2>
-      <img class="bottom-cloud" src="images/crab.png" alt="clouds">
-      <img class="main-foto" src="images/calita.jpg" alt="">
-    </div>
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="nav-link" href="#Home">
+            <img id="jaga_icon" src="images/jaga-icon-circle.png" alt="Jose">
+
+              <h7 class="nav-link2">Home</h7>
+
+        </a>
+        <button class="navbar-toggler" type="submit" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation" onclick="location.reload(true)">
+             <span class="navbar-toggler-icon"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#AboutMe">About Me</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Work">Work</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Abilities">Abilities</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#ContactMe">Contact Me</a>
+            </li>
+           </ul>
+        </div>
+      </nav>
+      <script>
+
+          // Función para manejar el evento de clic en los enlaces
+          document.querySelectorAll('a.nav-link[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+              e.preventDefault();
+              const target = document.querySelector(this.getAttribute('href'));
+              const offset = 0; // Puedes ajustar este valor según el desplazamiento que desees
+
+              if (target) {
+                const top = target.getBoundingClientRect().top + window.pageYOffset;
+                window.scroll({ top: top - offset, behavior: 'smooth' });
+
+                // Llama a la función asociada a la sección "Abilities" después del desplazamiento
+                if (this.getAttribute('href') === '#Abilities') {
+                  activateAbilitiesFunction(); // Reemplaza "activateAbilitiesFunction" con el nombre de tu función
+                }
+              }
+            });
+          });
+
+           function activateAbilitiesFunction() {
+             console.log("Activating Abilities");
+              // Obtén todas las barras de progreso dentro de la sección "Abilities"
+              //const progressBars = document.querySelectorAll('#Abilities .chart footer .progress-bar');
+              const progressBars = document.querySelectorAll('#Abilities .progress-bar');
+
+              setTimeout(() => {
+                progressBars.forEach(bar => {
+                  const dataWidth = bar.getAttribute('data-width');
+                  bar.style.width = '0';
+                  console.log("data-width:", dataWidth); // Verifica que se esté obteniendo correctamente el atributo data-width
+                  setTimeout(() => {
+                    bar.classList.add('progress-bar-transition');
+                    bar.style.width = dataWidth;
+                  }, 1200);
+                });
+              }, 100);
+          }
+
+      </script>
+    <!-- </div> -->
+    <section id="Home">
+      <!-- AQUI HACE FALTA ENGANCHAR LA FOTO -->
+      <div class="main-div">
+
+        <img class="main-foto img-fluid" src="images/calita.jpg" alt="">
+        <br>
+      </div>
+    </section>
+  <section id="AboutMe">
+    <!-- <h1>hello</h1> -->
     <div class="middle-container">
-      <div class="profile">
-        <img src="images/jaga-cropped.png" alt="Jose Antonio Grau profile picture">
-        <h2>Hello.</h2>
+      <div class="container">
+        <div class="cat">
+          <img src="images/jagacropped2.png" alt="Jose Antonio Grau profile picture">
+        </div>
+        <h2>Hello this is Jose Antonio.</h2>
+        <!-- TODO: CAMBIAR LA WIDTH DE ESTOS CAMPOS PARA QUE SEA RESPONSIVE CON @media -->
         <p class="intro">I am a Computer Engineer based in Madrid, Spain. I have passion for the new technologies and love to learn new things everyday.</p>
       </div>
       <hr>
-      <div class="skills">
-        <h2>My Skills.</h2>
+      <br>
+      <br>
+      <div class="skills container">
+        <h2>More things about me.</h2>
         <div class="skill-row">
           <img class="programmer" src="images/programmer-cropped.png" alt="programador">
           <h3>Development</h3>
-          <p>I started learning to code when I was 18 years old because I started to study computer science. I was interested in this world and most attention on robotics, autonomous cars, etc.</p>
+          <p class="texto-justificado">
+             I embarked on my coding journey at the age of 18 when I began studying <strong>computer science</strong>. Intrigued by the fascinating world of <strong>programming</strong>, I got deep into the subject and honed my skills over time.
+             <br>
+             <br>
+             I take great pride in my journey as a <strong>Data Developer</strong> at <strong>Carrefour Spain</strong>, where I have had the opportunity to make significant contributions to the development of <strong>data-driven solutions</strong>. In this company, I have not only leveraged my technical expertise but also assumed additional responsibilities as an <strong>Analyst</strong> and <strong>Project Manager</strong> for these solutions.
+             <br>
+             <br>
+             In addition to my professional role, I completed a <strong>Master's Degree</strong> in <strong>Big Data</strong> and <strong>Data Science</strong> from <strong>VIU (Valencia International University)</strong>. This program has equipped me with comprehensive knowledge and advanced techniques in the field.
+             <br>
+             <br>
+             I am eager to continue growing in my career and applying my expertise in the scope of <strong>data engineering</strong> and <strong>data science</strong> in a dynamic environment.
+             <br>
+             I look forward to continuing to contribute to the success of <strong>data-driven projects</strong> and furthering my professional growth in these capacities.
+
+
+          </p>
         </div>
         <div class="skill-row">
           <img class="ironman" src="images/iron.png" alt="ordenador">
+
           <h3>Triathlon</h3>
-          <p>I started this passion when i was 4 years old with my father, I also like other sports but Ironman is my objective.</p>
+
+          <p class="texto-justificado">
+            I developed my passion for sports at the age of 4, thanks to my father's influence.
+            Although I enjoy various athletic activities, triathlon holds an special place in my heart and remains a constant pursuit in my life.
+          </p>
+        </div>
+        <div class="skill-row">
+          <h3>Motorbikes</h3>
+          <p class="texto-justificado">
+              In addition to my love for sports, I have a deep fascination for motorbikes.
+               Exploring the world on two wheels allows me to appreciate and savor the breathtaking landscapes that surround us.
+                The thrill of riding, coupled with the scenic beauty, creates an unforgettable and enriching experience that feeds my adventurous spirit.
+                Motorbiking adds an extra dimension of excitement to my life.          </p>
+          <img class="motorbike" src="images/moto.png" alt="moto">
+
+          <img class="motorbike" src="images/moto2.png" alt="moto2">
+
         </div>
       </div>
       <hr>
-      <div class="contact-me">
-        <h2>Get In Touch</h2>
-        <h3>Looks amazing to see you on my page.</h3>
-        <p class="contact-message">If you would like to ask me anything. Don't hesitate to do it.</p>
-        <a class="btn" href="mailto:grau_jose@hotmail.com">CONTACT ME</a>
-      </div>
+  </section>
+  <section id="Work">
+  <h1>Work experience</h1>
+  <div class="skills container">
+    <div class="skill-row">
+      <img class="companies" src="images/carrefour.png" alt="carrefour-logo">
+      <h3>Carrefour</h3>
+      <p class="texto-justificado">
+        <b>2021-Now  Analyst and Tech Project Manager at Carrefour, Madrid, Spain.</b>
+        <br><br>
+          <strong>Analyst and Project Manager</strong>:
+        <br>
+        Big Data and Data Science Scrum Master of the supply chain applications development team.
+        <br>
+        <br>
+        Analysis and design of data-driven solutions in order to accomplish the business requirements.
+        In coordination with an external team, who assists us in developing the solutions.
+        <br>
+        <br>
+        At the service of the business. Telephone, email and personalized attention.
+        <br>
+        <br>
+        Advice, resolution of questions and doubts.
+        <br>
+        <br>
+        <strong>Big Data Developer</strong>:
+        <br>
+        Contributions to the development of data-driven solutions with Scala-Spark to the Supply area.
+        <br><br>
+        Stock management of store shelfs and sales forecasts for store supply.
+        <br><br>
+        Analysis, design, development, testing and stabilization of Big Data processes.
+        <br><br>
+        Teamwork, agile methodologies, programming with Spark Scala, data management and transformation, Hive and Kudu databases, Control-M planner, SQL queries, HQL, Impala, Jenkins, Git, Jira, Confluence, Cloudera.
+      </p>
     </div>
+    <div class="skill-row">
+      <img class="companies" src="images/deloitte.png" alt="deloitte-logo">
+
+      <h3>Deloitte</h3>
+      <p class="texto-justificado">
+        <b>2019-2021 Consultant at Deloitte Robotics, Madrid, Spain.</b>
+        <br><br>
+
+        Java developer. RPA developer (Robotic Process Automation)
+based on Jidoka (Appian RPA).
+<br><br>
+Agile tool management, Kanban, Jira.
+<br><br>
+Completion of all phases of the software development process.
+Analysis, design, development, testing, stabilization and Go
+Live.
+<br><br>
+Most experience based on: Technological consulting, team
+management, development, implementation and integration of
+RPA solutions, methodology and standardization of projects.
+<br><br>
+Customer service. Telephone, email and personal service.
+Advice, answer questions and doubts.
+Main projects:
+<ul style="list-style-type: disc">
+  <li>Empark: Automation of SAP and Siltra processes with
+  the accounting and HR department.</li>
+  <li>Hoteles Lopesan: Automation of SAP processes with
+  the accounting department.</li>
+  <li>Load Balancing robot: Master-Slave robot to control
+  RDP sessions and execute other robots.</li>
+  <li>Deloitte-Laboral: Be part of Technological
+  transformation process of the Deloitte HR department
+  using robots.</li>
+</ul>
+      </p>
+    </div>
+    <div class="skill-row">
+      <img class="companies" src="images/indra.png" alt="indra-logo">
+      <h3>Indra</h3>
+      <p class="texto-justificado">
+        <b>2018-2019 Training period at Indra Sistemas, Madrid, Spain.</b>
+        <br><br>
+        Real time architecture in Simulation division.
+        <br><br>
+        Design, development and integration of Full Flight Simulators
+        (FFS), civil and military aircraft-helicopter simulators.
+        <br>
+        <ul style="list-style-type: disc">
+          <li>Real time systems developer with Linux.</li>
+          <li>Linux and Windows machines management.</li>
+          <li>C/C++ programming.</li>
+        </ul>
+        </p>
+    </div>
+    <div class="skill-row">
+      <img class="companies" src="images/cfzcobots2.png" alt="indra-logo">
+      <h3>CFZ Cobots</h3>
+      <p class="texto-justificado">
+        <b>2017 Internship at CFZ-Cobots Alicante, Spain</b>
+        <br>
+        <ul style="list-style-type: disc">
+          <li>Cobots robots programming (Universal Robots)</li>
+          <li>Artificial vision (FQ/FH)</li>
+          <li>Web server with raspberry (Html, css, python, php)</li>
+        </ul>
+      </p>
+    </div>
+  </div>
+  <br>
+  </section>
+  <section id="Abilities">
+    <!-- SKILLS ********** -->
+    <h1>Abilities</h1>
+  <!--  <h3>Skills</h3> -->
+        <div class="chart">
+          <span>SQL - HQL</span>
+          <footer>
+            <!--<div data-width="90%" class="progress-bar" style="background: rgb(255, 34, 83);"></div>-->
+            <div data-width="90%" class="progress-bar" style="background: rgb(72, 202, 255);"></div>
+
+          </footer>
+        </div>
+        <div class="chart">
+          <span>Impala</span>
+          <footer>
+            <!-- <div data-width="100%" class="progress-bar" style="background: rgb(174, 134, 193);"></div>-->
+            <div data-width="90%" class="progress-bar" style="background: rgb(200, 117, 241);"></div>
+
+          </footer>
+        </div>
+        <div class="skills-details">
+          <div class="chart">
+            <span>Jira</span>
+            <footer>
+              <div data-width="85%" class="progress-bar"></div>
+            </footer>
+          </div>
+          <div class="chart">
+            <span>Confluence</span>
+            <footer>
+            <div data-width="100%" class="progress-bar" style="background: rgb(72, 202, 255);"></div>
+            </footer>
+          </div>
+        <div class="chart">
+          <span>ControlM</span>
+          <footer>
+            <div data-width="80%" class="progress-bar" style="background: rgb(200, 117, 241);"></div>
+          </footer>
+        </div>
+        <div class="chart">
+          <span>Scala</span>
+          <footer>
+            <div data-width="75%" class="progress-bar"></div>
+          </footer>
+        </div>
+        <div class="chart">
+          <span>Python</span>
+          <footer>
+            <div data-width="70%" class="progress-bar" style="background: rgb(72, 202, 255);"></div>
+          </footer>
+        </div>
+        <div class="chart">
+          <span>Git</span>
+          <footer>
+            <div data-width="95%" class="progress-bar" style="background: rgb(200, 117, 241);"></div>
+          </footer>
+        </div>
+        <div class="chart">
+          <span>Maven</span>
+          <footer>
+            <div data-width="95%" class="progress-bar"></div>
+          </footer>
+        </div>
+        <div class="chart">
+          <span>Spark</span>
+          <footer>
+            <div data-width="85%" class="progress-bar" style="background: rgb(72, 202, 255);"></div>
+          </footer>
+        </div>
+        <div class="chart">
+          <span>Linux</span>
+          <footer>
+            <div data-width="70%" class="progress-bar" style="background: rgb(200, 117, 241);"></div>
+          </footer>
+        </div>
+        <div class="chart">
+          <span>Java</span>
+          <footer>
+            <div data-width="80%" class="progress-bar"></div>
+          </footer>
+        </div>
+        <div class="chart">
+          <span>HTML/CSS</span>
+          <footer>
+            <div data-width="50%" class="progress-bar" style="background: rgb(72, 202, 255);"></div>
+          </footer>
+        </div>
+
+      </div>
+<br>
+
+
+<!--
+    <div class="row">
+        <div class="col-md-6"  style="background-color:#11999E; border:2px solid; border-color: black; color: #FFFFFF; font-size: 1.2rem; font-weight: bold;">
+            SKILL
+        </div>
+        <div class="col-md-6"  style="background-color:#11999E; border:2px solid; border-color: black; color: #FFFFFF; font-size: 1.2rem; font-weight: bold;">
+            COMMENT
+        </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6" style="background-color:white; border:1px solid">
+              Java
+            </div>
+            <div class="col-md-6" style="background-color:white; border:1px solid">
+                Skill4 md
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" style="background-color:white; border:1px solid">
+              Scala
+            </div>
+            <div class="col-md-6" style="background-color:white; border:1px solid">
+                Skill4 md
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" style="background-color:white; border:1px solid">
+              Python
+            </div>
+            <div class="col-md-6" style="background-color:white; border:1px solid">
+                Skill4 md
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" style="background-color:white; border:1px solid">
+              Maven
+            </div>
+            <div class="col-md-6" style="background-color:white; border:1px solid">
+                Skill4 md
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" style="background-color:white; border:1px solid">
+              Git
+            </div>
+            <div class="col-md-6" style="background-color:white; border:1px solid">
+                Skill4 md
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" style="background-color:white; border:1px solid">
+              Object-Oriented Programming (OOP)
+            </div>
+            <div class="col-md-6" style="background-color:white; border:1px solid">
+                Skill4 md
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" style="background-color:white; border:1px solid">
+              Linux
+            </div>
+            <div class="col-md-6" style="background-color:white; border:1px solid">
+                Skill4 md
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" style="background-color:white; border:1px solid">
+              Jira
+            </div>
+            <div class="col-md-6" style="background-color:white; border:1px solid">
+                Skill4 md
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" style="background-color:white; border:1px solid">
+              Spark
+            </div>
+            <div class="col-md-6" style="background-color:white; border:1px solid">
+                Skill4 md
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" style="background-color:white; border:1px solid">
+              SQL
+            </div>
+            <div class="col-md-6" style="background-color:white; border:1px solid">
+                Skill4 md
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" style="background-color:white; border:1px solid">
+              HTML/CSS
+            </div>
+            <div class="col-md-6" style="background-color:white; border:1px solid">
+                Skill4 md
+            </div>
+        </div>
+      -->
+
+
+        <br>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+        <br>
+
+        <h1>
+            Languages
+        </h1>
+
+
+        <!--
+        <div class="row">
+          <div class="col-md-6"  style="background-color:#11999E; border:2px solid; border-color: black; color: #FFFFFF; font-size: 1.2rem; font-weight: bold;">
+            <b>LANGUAGE</b>
+          </div>
+          <div class="col-md-6"  style="background-color:#11999E; border:2px solid; border-color: black; color: #FFFFFF; font-size: 1.2rem; font-weight: bold;">
+            <b>LEVEL</b>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" style="background-color:white; border:1px solid;">
+              <b>Spanish</b>
+            </div>
+            <div class="col-md-6" style="background-color:white; border:1px solid;">
+              Native Language
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" style="background-color:white; border:1px solid;">
+              <b>English</b>
+            </div>
+            <div class="col-md-6" style="background-color:white; border:1px solid;">
+                B2, intermediate level. Always improving.
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" style="background-color:white; border:1px solid;">
+              <b>Valencian/Catalan</b>
+            </div>
+            <div class="col-md-6" style="background-color:white; border:1px solid;">
+                C1, advanced level
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" style="background-color:white; border:1px solid;">
+              <b>German</b>
+            </div>
+            <div class="col-md-6" style="background-color:white; border:1px solid;">
+                Starting level. In progress.
+            </div>
+        </div>
+-->
+
+
+
+
+        <div class="chart">
+
+          <span><b>Spanish</b> - Native Language </span>
+          <footer>
+            <div data-width="100%" class="progress-bar" style="background: rgb(72, 202, 255);"></div>
+          </footer>
+        </div>
+        <br>
+        <div class="chart">
+          <span><b>English</b> - B2. Always improving.</span>
+          <footer>
+            <div data-width="80%" class="progress-bar" style="background: rgb(200, 117, 241);"></div>
+          </footer>
+        </div>
+        <br>
+        <div class="skills-details">
+          <div class="chart">
+            <span><b>Valencian/Catalan</b> - C1, advanced level</span>
+            <footer>
+              <div data-width="90%" class="progress-bar"></div>
+            </footer>
+          </div>
+          <br>
+          <div class="chart">
+            <span><b>German</b> - Starting level. In progress</span>
+            <footer>
+              <div data-width="10%" class="progress-bar" style="background: rgb(72, 202, 255);"></div>
+            </footer>
+          </div>
+          <br>
+        <div class="chart">
+          <span><b>Italian</b> - Starting Level. In progress</span>
+          <footer>
+            <div data-width="20%" class="progress-bar" style="background: rgb(200, 117, 241);"></div>
+          </footer>
+        </div>
+
+
+
+
+
+        <br>
+        <hr>
+
+
+        <!-- SKILLS END**************** -->
+
+  </section>
+  <section id="ContactMe">
+    <div class="contact-me">
+      <h2>Get In Touch</h2>
+      <h3>Looks amazing to see you on my page.</h3>
+      <p class="contact-message">If you would like to ask me anything. Don't hesitate to do it.</p>
+      <a class="btn-contact" href="mailto:grau_jose@hotmail.com">CONTACT ME</a>
+    </div>
+  </section>
+<br>
+
+
+
+
+
 
 
     <div class="bottom-container">
-      <a class="footer-link" href="https://www.linkedin.com/in/jose-antonio-grau-albors-714402168/">LinkedIn<span class="footer-link1"></span></a>
-      <a class="footer-link" href="https://joseagrau.github.io/cv/">Curriculum Vitae</a>
-      <a class="footer-link" href="mailto:grau_jose@hotmail.com">Hire Me</a>
-      <p class="copyright">© 2020 Jose Antonio Grau @ Website.</p>
+      <a class="footer-link btn btn-outline-light" href="https://www.linkedin.com/in/jose-antonio-grau-albors-714402168/"><i class="fab fa-linkedin-in"></i>  LinkedIn<span class="footer-link1"></span></a>
+      <a class="footer-link btn btn-outline-light" href="https://github.com/joseagrau"><i class="fab fa-github"></i>  Github</a>
+      <a class="footer-link btn btn-outline-light" href="mailto:grau_jose@hotmail.com"><i class="fas fa-envelope"></i>  Message Me</a>
+      <p class="copyright">© 2023 Jose Antonio Grau @ Website.</p>
     </div>
 
   </body>

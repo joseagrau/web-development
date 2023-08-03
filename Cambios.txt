@@ -1,0 +1,27 @@
+Cuando se le de click a las secciones, en vez de que te lleve directamente a la sección, que haga como en esta web:
+https://www.redfardin.com/
+
+Y haga el recorrido desde donde estsa hasta abajo rapidito pero sin que se vaya de golpe
+
+OK!!!
+
+
+
+Con onclick funciona pero descuadra lo que se tiene que ver, al igual que cuando haces F5,
+ la pagina se recarga pero no vuelve al mismo punto sino que la pantalla se ve regular
+
+
+cuando suba y baje se quede en su sitio perfecto
+ OK!!!
+
+
+Cuando le das a home que se recargue pero que tb suba? no se si se puede eso
+
+
+onclick prueba KO
+
+
+Cuando hago F5 se descuadra lo que estoy viendo, no se pone justo en el inicio de la sección que estás visualizando
+
+Como reactivar el html footer (pie de pagina) con css ease de transicion 2segundos
+O cambiar a que sea un js porque no sé cómo reactivar esa transición

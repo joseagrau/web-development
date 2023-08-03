@@ -8,23 +8,33 @@ body {
   font-size: 120%;
 }
 
+
+/** BEFORE
 h1 {
 
 margin-top: 0;
-/*width: 10%;
-margin:0 auto 0 auto;*/
+
 font-family: 'Sacramento', cursive;
 
-/*font-size: 90px;*/
-/*font-size: 562.5%;*/
-/* 1em son 16px = 100%  */
-margin: 50px auto 0 auto;/*top right bottom left*/
+
+margin: 50px auto 0 auto;
 font-size: 5.625rem;
 color: #66BFBF;
-/*line-height: 2;*/
+
+}
+
+*/
+h1 {
+  margin-top: 0;
+  margin: 50px auto 0 auto; /* top right bottom left */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  color: #66BFBF;
+  text-align: center;
 }
 
 h2 {
+  margin-top: 50px;
   font-family: 'Montserrat', sans-serif;
   font-size: 2.5rem;
   color: #66BFBF;
@@ -37,15 +47,27 @@ h3 {
   color: #11999E;
 }
 
+/* @media (max-width: 576px) {
+  h3 {
+      padding-right: 3%;
+      padding-left: 3%;
+  }
+} */
+
+
 p{
   line-height: 2;
 }
 
 hr{
-  border: dotted #EAF6F6 6px;
+  border: dotted #B8C3C8 10px;
+
+
   border-bottom: none;
   width: 15%;
-  margin: 100px auto;
+/*
+  5FC2F1 azulito
+  margin: 100px auto;*/
   /*top and bot 100 left rith centrado*/
 }
 
@@ -61,8 +83,68 @@ a:hover{
   color: #EAF6F6;
 }
 
+/* .navbar {
+  background-color: #343a40!important;
+  overflow: hidden;
+  position: fixed; /* Set the navbar to fixed position */
+  /*top: 0; /* Position the navbar at the top of the page */
+  /*width: 100%; /* Full width */
+  /*left: 0;
+} */
+
+.navbar {
+
+  padding: 0rem 0rem;
+
+}
+
+/* .navbar{
+  padding-bottom: 0 rem;
+} */
+
+.navbar-light.bg-light{
+
+  /* background-color: rgba(37 122 148 / 0.95); !important; */
+  /* background-color: rgb(37 122 148 / 0.4) !important azulito */
+/*background-color: rgb(31 31 31 / 0.9) !important;*/
+
+   /* background-color: rgb(37 122 148 / 0.4) !important; azulito */
+   background-color: rgb(156 149 149 / 0.75) !important;
+}
+
+.main-div{
+  margin-top: 0px;
+  /* background-color: #343a40!important; */
+   /* background-color:#1f1f1fe6; */
+}
+
+.navbar-toggle-always{
+position: fixed;
+}
+
+.nav-link {
+  color: rgba(0, 0, 0, 1) !important;
+  }
+
+.nav-link2 {
+  color: rgba(0, 0, 0, 1) !important;
+}
+
+.nav-link:hover{
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.nav-link2:hover{
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
 .main-foto{
-  width: 1400px; height: 700px;
+  min-height: 500px;
+
+  display:block;
+  margin:auto;
+
+  /* width: 1400px; height: 700px; */
 }
 
 .divs{
@@ -71,8 +153,14 @@ a:hover{
 }
 
 .intro{
-  width: 30%;
+  width: 50%;
   margin: auto;
+}
+@media (max-width: 640px) {
+  .intro{
+    width: 75%;
+    margin: auto;
+  }
 }
 
 .top-container{
@@ -93,6 +181,7 @@ background-color: #007892;
 
 .middle-container{
   margin: 100px 0;
+  margin-bottom: 10px;
 /*
   margin-left: 260px;
   border: solid 20px;
@@ -101,6 +190,11 @@ background-color: #007892;
   height: 200px;
   width: 200px;*/
 }
+
+.container{
+    margin-bottom: 100px;
+}
+
 .bottom-container{
   /*
   margin-left: 500px;
@@ -112,17 +206,35 @@ background-color: #007892;
   background-color: #007892;
   padding: 50px 0 20px; /*top right bottom*/
 }
+img {
+  view-timeline-name: --revealing-image;
+  animation-name: show;
+  animation-fill-mode: both;
+  animation-timeline: --revealing-image;
+
+  animation-range: entry 25% cover 50%;
+   max-width: 100%;
+   max-height: 100%;
+}
+.cat {
+  width: 40%;
+  /* height: 450px;
+   width: 450px;*/
+   display:block;
+   margin:auto;
+}
 
 .skills{
-  padding-bottom: 30px;
+/*  padding-top: 150px;
+    padding-bottom: 30px;*/
 }
 
 .skill-row{
   width: 50%;
   margin: 100px auto 100px auto;
   text-align: left;
-
 }
+
 
 .pro{
   color: #66BFBF;
@@ -134,15 +246,53 @@ background-color: #007892;
   width: 40%;
   float: left;
   margin-right: 30px;
-
 }
 
 .ironman{
 /*  width: 300px; height: 300px;*/
   width: 40%;
   float: right;
+  margin-left: 30px;
+
+}
+
+.companies{
+  width: 15%;
+  float: left;
   margin-right: 30px;
 }
+
+.moto{
+  margin:auto;
+}
+
+.motorbike{
+/*  width: 300px; height: 300px;*/
+  width: 100%;
+/*  float: left;
+  margin-right: 30px;
+  display:block;
+  margin:auto;*/
+  position:relative;
+  padding:0;
+  margin:0;
+  margin-bottom:60px;
+  margin-top:0;
+  right:0px;
+  top:0px;
+
+}
+.triJaga{
+/*  width: 300px; height: 300px;*/
+  width: 90%;
+  float: left;
+  margin-right: 30px;
+}
+/* .rounded{
+  width: 60%;
+
+} */
+
 .top-cloud {
   position: absolute;
   right: 90px;
@@ -154,10 +304,19 @@ background-color: #007892;
   bottom: 750px;
 
 }
+.contact-me{
+  margin-bottom: 100px;
+
+}
 
 .contact-message{
   width: 40%;
   margin: 40px auto 60px; /*top left-right bottom*/
+}
+@media (max-width: 640px) {
+  .contact-message{
+    width: 80%;
+  }
 }
 
 
@@ -169,7 +328,7 @@ background-color: #007892;
   clear: right;
 }*/
 
-.btn {
+.btn-contact{
   background: #11cdd4;
   background-image: -webkit-linear-gradient(top, #11cdd4, #2980b9);
   background-image: -moz-linear-gradient(top, #11cdd4, #2980b9);
@@ -186,7 +345,7 @@ background-color: #007892;
   text-decoration: none;
 }
 
-.btn:hover {
+.btn-contact:hover {
   background: #4ee6cd;
   background-image: -webkit-linear-gradient(top, #4ee6cd, #0796e8);
   background-image: -moz-linear-gradient(top, #4ee6cd, #0796e8);
@@ -196,11 +355,227 @@ background-color: #007892;
   text-decoration: none;
 }
 
+.btn {
+  font-weight: bold;
+}
 
 
+#jaga_icon{
+  width: 75px; height: 75px;
+
+}
+
+.row1{
+
+}
+
+/*.col-md-7{
+  color: #000000;
+  font-size: 1rem;
+  font-weight: bold;
+
+}*/
+.col-md-6{
+  font-size: 1rem;
+  font-weight: bold;
+
+}
+
+.row2{
+
+}
+.prueba{
+    max-width: 2060px;
+}
 
 .copyright{
   color: #EAF6F6;
   font-size: 0.75rem;
   padding: 20px 0;
+}
+#AboutMe{
+  padding-top: 1%;
+}
+
+#Work{
+  padding-top: 5%;
+}
+
+#Abilities{
+  padding: 5% 15%;
+  /*background-color: #1d1d1d 373737 */
+  background-color: #494954
+   /*rgb(31 31 31 / 0.9)*/
+}
+#ContactMe{
+  padding-top: 9.3%;
+
+}
+
+
+.texto-justificado{
+  text-align: justify;
+}
+
+
+@media screen and (max-width: 1100px){
+.page-skills .text-zone+div {
+    width: 100%;
+    height: 2%;
+    padding: 2rem;
+  }
+}
+
+.page-skills .text-zone {
+    padding-right: 5rem;
+    width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+span{
+  width: 100%;
+  display:block;
+
+}
+
+footer{
+  display: block;
+  color: #FFFFFF;
+}
+
+.chart {
+  color: #FFFFFF
+}
+
+
+.chart span {
+    font-size: 24px;
+    font-family: font-file-82132;
+    margin-bottom: 3px;
+    padding-bottom: 3px;
+    display: block;
+    text-align: left;
+
+}
+/*
+.chart footer {
+    background-color: #FFFFFF;
+    height: 2px;
+}*/
+
+.chart footer {
+    background-color: #373737;
+    height: 2px;
+}
+.chart footer div{
+  width: 0;
+  height: 2px;
+  background-color: #08fdd8;
+  -webkit-transition: width 1.3s ease-out;
+  -o-transition: width 1.3s ease-out;
+  transition: width 1.3s ease-out;
+}
+
+/*
+.footer{
+  width: 2px;
+  height: 100%;
+  background-color: #FFFFFF;
+  -webkit-transition: width 1.3s ease-out;
+  -o-transition: width 1.3s ease-out;
+  transition: width 1.3s ease-out;
+}*/
+
+/*
+.chart{
+  font-family: 'Spectral', serif;
+  /font-family: 'Sacramento', cursive;/
+  margin: auto auto 0 auto;/*top right bottom left/
+  color: #FFFFFF;
+  position: relative;
+}
+*/
+.chart {
+  position: relative;
+  color: #FFFFFF
+}
+
+/*.chart footer div {
+  transition: width 2s ease;
+}*/
+
+/**** ultima modi
+.chart footer .progress-bar {
+  width: 0;
+  transition: width 2s ease;
+
+}
+*/
+.progress-bar {
+  width: 0;
+  transition: width 2s ease;
+}
+
+.progress-bar2 {
+  width: 0;
+  transition: width 2s ease;
+}
+
+.progress-bar-transition {
+  transition: width 2s ease;
+}
+
+
+
+/*
+    width: 0;
+    height: 100%;
+    background-color: #08fdd8;
+    -webkit-transition: width 1.3s ease-out;
+    -o-transition: width 1.3s ease-out;
+    transition: width 1.3s ease-out;
+
+
+
+    margin-bottom: 2rem;
+}
+*/
+
+.language-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.language-col, .level-col {
+  flex-basis: 50%;
+  padding: 5px;
+  text-align: center;
+  background-color: #11999E;
+  border: 2px solid black;
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.level-col {
+  background-color: white;
+  border: 1px solid black;
+}
+
+@keyframes show {
+  from{
+    opacity: 0;
+    scale: 25%;
+  }
+  to{
+    opacity: 1;
+    scale: 100%;
+  }
 }
